@@ -1,33 +1,19 @@
 # Django Quickstart
 
-## Getting markdown styles
-- https://dillinger.io/
-
 ## Create the project
 - In the root file create: *Dockerfile, requirements.txt, docker-compose.yml*
 
 * Build the image
 ```sh
-$ docker-compose run web django-admin.py startproject project .
+$ docker-compose run web django-admin.py startproject tutorial .
+
+create app
+$ docker-compose run web django-admin.py startapp quickstart
 ```
 
 * Change the ownership of the new files
 ```sh
 $ sudo chown -R $user .
-```
-
-* Configure project/settings.py
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'postgres',
-        'PORT': 5432,
-    }
-}
 ```
 
 * Run: *docker-compose up*
